@@ -1,0 +1,37 @@
+@import-normalize;
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+:root {
+  //_Font:
+  --f-family: "Rubik", sans-serif;
+  --f-size: 16px;
+  --fw-normal: 400;
+  --fw-medium: 500;
+
+  //_Color:
+  --grey-100: #f4f6fa;
+  --grey-200: #abc1e1;
+  --grey-400: #626c7f;
+  --grey-700: #3b4d66;
+  --grey-900: #313e51;
+
+  --orange-100: #fff1e9;
+  --blue-100: #ebf0ff;
+  --purple-100: #f6e7ff;
+  --purple-400: #a729f5;
+  --green-100: #e0fdef;
+  --green-400: #26d782;
+  --red-400: #ee5454;
+  --white: #ffffff;
+}
+
+body[data-theme="light"] {
+}
+
+body[data-theme="dark"] {
+}
