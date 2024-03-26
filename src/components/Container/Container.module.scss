@@ -1,0 +1,8 @@
+@import "../../styles/mixins";
+
+.container {
+  @include flex-center;
+  flex-direction: column;
+  max-width: 1200px;
+  padding: 1.25rem;
+}

@@ -1,6 +1,8 @@
 @import-normalize;
 @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 
+@import "../src/styles/mixins";
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -30,8 +32,42 @@
   --white: #ffffff;
 }
 
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+body {
+  @include flex-center;
+  width: 100%;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @media (max-width: 992px) {
+    background-size: auto;
+  }
+}
+
 body[data-theme="light"] {
+  background-image: url("../src/assets/images/pattern-background-desktop-light.svg");
+  background-color: var(--white);
+
+  @media (max-width: 992px) {
+    background-image: url("../src/assets/images/pattern-background-tablet-light.svg");
+    background-size: auto;
+  }
+  @media (max-width: 479px) {
+    background-image: url("../src/assets/images/pattern-background-mobile-light.svg");
+  }
 }
 
 body[data-theme="dark"] {
+  background-image: url("../src/assets/images/pattern-background-desktop-dark.svg");
+  background-color: var(--grey-900);
+  @media (max-width: 992px) {
+    background-image: url("../src/assets/images/pattern-background-tablet-dark.svg");
+  }
+  @media (max-width: 479px) {
+    background-image: url("../src/assets/images/pattern-background-mobile-dark.svg");
+  }
 }
