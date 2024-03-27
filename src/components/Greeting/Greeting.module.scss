@@ -1,0 +1,23 @@
+.greeting {
+  h2 {
+    display: flex;
+    flex-direction: column;
+    font-size: 2.5rem;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+    span:first-child {
+      font-weight: var(--fw-light);
+    }
+  }
+
+  @media (min-width: 767px) {
+    h2 {
+      margin-bottom: 3rem;
+    }
+  }
+  @media (min-width: 600px) {
+    h2 {
+      font-size: 4rem;
+    }
+  }
+}

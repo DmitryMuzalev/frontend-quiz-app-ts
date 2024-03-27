@@ -12,12 +12,14 @@
   //_Font:
   --f-family: "Rubik", sans-serif;
   --f-size: 16px;
+  --fw-light: 100;
   --fw-normal: 400;
   --fw-medium: 500;
 
   //_Color:
   --grey-100: #f4f6fa;
   --grey-200: #abc1e1;
+  --grey-300: #bfcfe8;
   --grey-400: #626c7f;
   --grey-700: #3b4d66;
   --grey-900: #313e51;
@@ -33,22 +35,27 @@
 }
 
 #root {
+  @include flex-center;
   width: 100%;
   min-height: 100vh;
 }
 
 body {
-  @include flex-center;
   width: 100%;
   min-height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
+  font-family: var(--f-family);
+
   @media (max-width: 992px) {
     background-size: auto;
   }
 }
 
 body[data-theme="light"] {
+  --color-info-text: var(--grey-900);
+  --color-text: var(--grey-900);
+
   background-image: url("../src/assets/images/pattern-background-desktop-light.svg");
   background-color: var(--white);
 
@@ -62,6 +69,9 @@ body[data-theme="light"] {
 }
 
 body[data-theme="dark"] {
+  --color-text: var(--white);
+  --color-info-text: var(--grey-300);
+
   background-image: url("../src/assets/images/pattern-background-desktop-dark.svg");
   background-color: var(--grey-900);
 
@@ -71,5 +81,19 @@ body[data-theme="dark"] {
 
   @media (max-width: 479px) {
     background-image: url("../src/assets/images/pattern-background-mobile-dark.svg");
+  }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.textInfo {
+  font-size: 0.875rem;
+  color: var(--color-info-text);
+  font-style: italic;
+  @media (min-width: 600px) {
+    font-size: 1.25rem;
   }
 }
