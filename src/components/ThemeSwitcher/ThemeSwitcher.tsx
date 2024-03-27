@@ -15,7 +15,7 @@ export const ThemeSwitcher = () => {
 
   return (
     <div className={styles.themeSwitcher}>
-      {isDark ? <SunDarkIcon /> : <SunLightIcon />}
+      {isDark ? <SunLightIcon /> : <SunDarkIcon />}
       <label className={styles.switcher}>
         <input
           type="checkbox"
@@ -25,7 +25,7 @@ export const ThemeSwitcher = () => {
         />
         <span className={styles.switcherSlider}></span>
       </label>
-      {isDark ? <MoonDarkIcon /> : <MoonLightIcon />}
+      {isDark ? <MoonLightIcon /> : <MoonDarkIcon />}
     </div>
   );
 };

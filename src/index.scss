@@ -54,8 +54,8 @@ body[data-theme="light"] {
 
   @media (max-width: 992px) {
     background-image: url("../src/assets/images/pattern-background-tablet-light.svg");
-    background-size: auto;
   }
+
   @media (max-width: 479px) {
     background-image: url("../src/assets/images/pattern-background-mobile-light.svg");
   }
@@ -64,9 +64,11 @@ body[data-theme="light"] {
 body[data-theme="dark"] {
   background-image: url("../src/assets/images/pattern-background-desktop-dark.svg");
   background-color: var(--grey-900);
+
   @media (max-width: 992px) {
     background-image: url("../src/assets/images/pattern-background-tablet-dark.svg");
   }
+
   @media (max-width: 479px) {
     background-image: url("../src/assets/images/pattern-background-mobile-dark.svg");
   }
