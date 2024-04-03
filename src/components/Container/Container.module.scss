@@ -3,6 +3,7 @@
 .container {
   @include flex-center;
   flex-direction: column;
+  row-gap: 5rem;
   width: 1200px;
   padding: 0.625rem;
   margin: 0 auto;

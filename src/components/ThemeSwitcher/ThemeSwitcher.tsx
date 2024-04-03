@@ -1,11 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from "./ThemeSwitcher.module.scss";
 
-import { ReactComponent as SunDarkIcon } from "assets/images/icon-sun-dark.svg";
-import { ReactComponent as SunLightIcon } from "assets/images/icon-sun-light.svg";
-import { ReactComponent as MoonDarkIcon } from "assets/images/icon-moon-dark.svg";
-import { ReactComponent as MoonLightIcon } from "assets/images/icon-moon-light.svg";
-
 export const ThemeSwitcher = () => {
   const [isDark, setIsDark] = useState(false);
 
@@ -15,7 +10,14 @@ export const ThemeSwitcher = () => {
 
   return (
     <div className={styles.themeSwitcher}>
-      {isDark ? <SunLightIcon /> : <SunDarkIcon />}
+      <img
+        src={
+          isDark
+            ? "./assets/images/icon-sun-light.svg"
+            : "./assets/images/icon-sun-dark.svg"
+        }
+        alt="sun"
+      />
       <label className={styles.switcher}>
         <input
           type="checkbox"
@@ -25,7 +27,14 @@ export const ThemeSwitcher = () => {
         />
         <span className={styles.switcherSlider}></span>
       </label>
-      {isDark ? <MoonLightIcon /> : <MoonDarkIcon />}
+      <img
+        src={
+          isDark
+            ? "./assets/images/icon-moon-light.svg"
+            : "./assets/images/icon-moon-dark.svg"
+        }
+        alt="moon"
+      />
     </div>
   );
 };

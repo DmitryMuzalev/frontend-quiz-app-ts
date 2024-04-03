@@ -1,1 +1,4 @@
-.quizList {}
+.quizList {
+  display: flex;
+  flex-direction: column;
+}

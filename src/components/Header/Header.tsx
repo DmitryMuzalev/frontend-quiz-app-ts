@@ -1,10 +1,8 @@
 import { ThemeSwitcher } from "components/ThemeSwitcher/ThemeSwitcher";
 import styles from "./Header.module.scss";
-import { ReactComponent as AccessibilityIcon } from "assets/images/icon-accessibility.svg";
+//import { ReactComponent as AccessibilityIcon } from "assets/images/icon-accessibility.svg";
 
-interface HeaderProps {}
-
-export const Header = ({}: HeaderProps) => (
+export const Header = () => (
   <header className={styles.header}>
     {/*<div className={styles.headerLabel}>
       <div className={styles.headerLabelIcon}>

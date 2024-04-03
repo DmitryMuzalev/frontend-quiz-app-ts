@@ -1,5 +1,7 @@
 import { createContext } from "react";
-import { State } from "types";
+import { QuizType, State } from "types";
+
+import data from "data.json";
 
 export const Context = createContext<State | null>(null);
 
@@ -8,6 +10,8 @@ type ContextProviderProps = {
 };
 
 export const ContextApp = (props: ContextProviderProps) => {
-  const state: State = {};
+  const quizzes: QuizType[] = data.quizzes;
+
+  const state: State = { quizzes };
   return <Context.Provider value={state}>{props.children}</Context.Provider>;
 };
