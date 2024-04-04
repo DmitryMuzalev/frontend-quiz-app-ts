@@ -97,3 +97,32 @@ ul {
     font-size: 1.25rem;
   }
 }
+
+.iconBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 0.5rem;
+  @media (max-width: 479px) {
+    width: 2.5rem;
+    height: 2.5rem;
+    img {
+      width: 60%;
+    }
+  }
+}
+
+#html {
+  background-color: var(--orange-100);
+}
+#css {
+  background-color: var(--green-100);
+}
+#javascript {
+  background-color: var(--blue-100);
+}
+#accessibility {
+  background-color: var(--purple-100);
+}
