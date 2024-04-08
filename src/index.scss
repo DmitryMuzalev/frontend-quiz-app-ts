@@ -57,7 +57,7 @@ body[data-theme="light"] {
   --color-text: var(--grey-900);
 
   background-image: url("../public/assets/images/pattern-background-desktop-light.svg");
-  background-color: var(--white);
+  background-color: var(--grey-100);
 
   @media (max-width: 992px) {
     background-image: url("../public/assets/images/pattern-background-tablet-light.svg");

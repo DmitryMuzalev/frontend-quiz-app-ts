@@ -1,8 +1,10 @@
+import { ChoicesAnswers } from "components/ChoicesAnswers/ChoicesAnswers";
 import { Container } from "components/Container/Container";
-import { Greeting } from "components/Greeting/Greeting";
+//import { Greeting } from "components/Greeting/Greeting";
 import { Header } from "components/Header/Header";
 import { Layout } from "components/Layout/Layout";
-import { QuizList } from "components/QuizList/QuizList";
+import { QuizContent } from "components/QuizContent/QuizContent";
+//import { QuizList } from "components/QuizList/QuizList";
 import { ContextApp } from "hoc/Context";
 
 function App() {
@@ -11,8 +13,12 @@ function App() {
       <Container>
         <Header />
         <Layout>
+          {/* 
           <Greeting />
-          <QuizList />
+          <QuizList /> 
+          */}
+          <QuizContent />
+          <ChoicesAnswers />
         </Layout>
       </Container>
     </ContextApp>
