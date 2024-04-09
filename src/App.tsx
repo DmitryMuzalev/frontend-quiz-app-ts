@@ -1,25 +1,18 @@
-import { ChoicesAnswers } from "components/ChoicesAnswers/ChoicesAnswers";
-import { Container } from "components/Container/Container";
-//import { Greeting } from "components/Greeting/Greeting";
-import { Header } from "components/Header/Header";
-import { Layout } from "components/Layout/Layout";
-import { QuizContent } from "components/QuizContent/QuizContent";
-//import { QuizList } from "components/QuizList/QuizList";
 import { ContextApp } from "hoc/Context";
+import { Container } from "components/Container/Container";
+import { Header } from "components/Header/Header";
+//import { StartMenu } from "components/StartMenu/StartMenu";
+//import { Quiz } from "components/Quiz/Quiz";
+import { Result } from "components/Result/Result";
 
 function App() {
   return (
     <ContextApp>
       <Container>
         <Header />
-        <Layout>
-          {/* 
-          <Greeting />
-          <QuizList /> 
-          */}
-          <QuizContent />
-          <ChoicesAnswers />
-        </Layout>
+        {/* <StartMenu /> */}
+        {/* <Quiz /> */}
+        <Result />
       </Container>
     </ContextApp>
   );

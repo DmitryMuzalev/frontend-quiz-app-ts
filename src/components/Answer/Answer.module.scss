@@ -1,0 +1,47 @@
+.answer {
+  transition: all 0.3s;
+
+  &Select {
+    border-color: var(--purple-400);
+  }
+  &Select > &Icon {
+    background-color: var(--purple-400);
+    color: var(--white);
+  }
+
+  &Error {
+    border-color: var(--red-400);
+  }
+  &Error > &Icon {
+    background-color: var(--red-400);
+    color: var(--white);
+  }
+
+  &Correct {
+    border-color: var(--green-400);
+  }
+  &Correct > &Icon {
+    background-color: var(--green-400);
+    color: var(--white);
+  }
+
+  &:hover {
+    border-color: var(--purple-400);
+  }
+
+  &:hover > &Icon {
+    background-color: var(--purple-100);
+    color: var(--purple-400);
+  }
+
+  &Text {
+    flex-grow: 1;
+  }
+
+  &Status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.5rem;
+  }
+}

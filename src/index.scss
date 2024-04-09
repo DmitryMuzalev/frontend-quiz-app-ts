@@ -27,6 +27,7 @@
   --orange-100: #fff1e9;
   --blue-100: #ebf0ff;
   --purple-100: #f6e7ff;
+  --purple-300: #b64afa;
   --purple-400: #a729f5;
   --green-100: #e0fdef;
   --green-400: #26d782;
@@ -55,6 +56,7 @@ body {
 body[data-theme="light"] {
   --color-info-text: var(--grey-900);
   --color-text: var(--grey-900);
+  --bg-elements: var(--white);
 
   background-image: url("../public/assets/images/pattern-background-desktop-light.svg");
   background-color: var(--grey-100);
@@ -71,6 +73,7 @@ body[data-theme="light"] {
 body[data-theme="dark"] {
   --color-text: var(--white);
   --color-info-text: var(--grey-300);
+  --bg-elements: var(--grey-700);
 
   background-image: url("../public/assets/images/pattern-background-desktop-dark.svg");
   background-color: var(--grey-900);
@@ -84,9 +87,37 @@ body[data-theme="dark"] {
   }
 }
 
-ul {
-  list-style: none;
-  padding: 0;
+h2 {
+  display: flex;
+  flex-direction: column;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  color: var(--color-text);
+  span:first-child {
+    font-weight: var(--fw-light);
+  }
+}
+
+h3 {
+  font-weight: var(--fw-medium);
+  font-size: clamp(1.25rem, 5vw, 2.125rem);
+  color: var(--color-text);
+}
+
+progress {
+  border-radius: 0.75rem;
+  border: 3px solid var(--bg-elements);
+  width: 100%;
+  height: 1rem;
+
+  &::-webkit-progress-bar {
+    background-color: var(--bg-elements);
+    border-radius: 0.75rem;
+  }
+
+  &::-webkit-progress-value {
+    background-color: var(--purple-400);
+    border-radius: 0.75rem;
+  }
 }
 
 .textInfo {
@@ -98,13 +129,50 @@ ul {
   }
 }
 
-.iconBox {
+.list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+  &Item {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-family: inherit;
+    font-weight: var(--fw-medium);
+    font-size: clamp(1.125rem, 5vw, 1.75rem);
+    color: var(--color-text);
+    text-align: left;
+    padding: 1.25rem;
+    column-gap: 2rem;
+    border: 3px solid transparent;
+    border-radius: 1.25rem;
+    background-color: var(--bg-elements);
+    box-shadow: 0 16px 40px 0 rgba(143, 160, 193, 0.14);
+
+    div:first-child {
+      flex-shrink: 0;
+    }
+  }
+
+  @media (max-width: 767px) {
+    &Item {
+      padding: 0.75rem;
+      column-gap: 1rem;
+    }
+  }
+}
+
+.icon {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 0.5rem;
+  background-color: var(--grey-100);
+  color: var(--grey-400);
+  transition: all 0.3s;
+
   @media (max-width: 479px) {
     width: 2.5rem;
     height: 2.5rem;

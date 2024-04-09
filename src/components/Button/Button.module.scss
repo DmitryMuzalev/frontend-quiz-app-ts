@@ -1,0 +1,19 @@
+.button {
+  width: 100%;
+  cursor: pointer;
+  padding: 1.75rem 1.25rem;
+  font-family: inherit;
+  font-weight: var(--fw-medium);
+  font-size: clamp(1.125rem, 5vw, 1.75rem);
+  border-radius: 1.25rem;
+  border: none;
+  color: var(--white);
+  background-color: var(--purple-400);
+  transition: all 0.3s;
+  &:hover {
+    background-color: var(--purple-300);
+  }
+  @media (max-width: 767px) {
+    padding: 1.5rem 0.75rem;
+  }
+}

@@ -1,0 +1,11 @@
+.question {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.5rem;
+  h3 {
+    flex-grow: 1;
+  }
+  @media (max-width: 992px) {
+    row-gap: 1rem;
+  }
+}
