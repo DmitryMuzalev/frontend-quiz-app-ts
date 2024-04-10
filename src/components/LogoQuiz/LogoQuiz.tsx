@@ -5,11 +5,13 @@ interface LogoQuizProps {
   name: string;
 }
 
-export const LogoQuiz = ({ images, name }: LogoQuizProps) => (
-  <div className={styles.logoQuiz}>
-    <div className="icon" id={name.toLowerCase()}>
-      <img src={images} alt={name} />
+export const LogoQuiz = ({ images, name }: LogoQuizProps) => {
+  return (
+    <div className={styles.logoQuiz}>
+      <div className="icon" id={name.toLowerCase()}>
+        <img src={images} alt={name} />
+      </div>
+      {name}
     </div>
-    {name}
-  </div>
-);
+  );
+};

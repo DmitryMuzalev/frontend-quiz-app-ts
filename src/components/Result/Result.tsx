@@ -16,6 +16,6 @@ export const Result = ({}: ResultProps) => (
       <div className={styles.resultScore}>6</div>
       <p className="textInfo"> out of 10</p>
     </div>
-    <Button>Play again</Button>
+    <Button cb={() => {}}>Play again</Button>
   </Layout>
 );

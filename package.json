@@ -40,6 +40,7 @@
     ]
   },
   "devDependencies": {
+    "clsx": "^2.1.0",
     "generate-react-cli": "^8.4.1",
     "sass": "^1.72.0"
   }
