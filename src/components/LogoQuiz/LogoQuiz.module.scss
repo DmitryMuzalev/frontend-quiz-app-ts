@@ -1,0 +1,10 @@
+@import "../../styles/mixins";
+
+.logoQuiz {
+  @include flex-center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: clamp(1.125rem, 5vw, 1.75rem);
+  font-weight: var(--fw-medium);
+  color: var(--color-text);
+}

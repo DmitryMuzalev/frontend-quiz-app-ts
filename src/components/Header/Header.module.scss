@@ -6,25 +6,6 @@
   justify-content: space-between;
   column-gap: 1rem;
 
-  &Label {
-    @include flex-center;
-    flex-wrap: wrap;
-    font-size: 1.125rem;
-    font-weight: var(--fw-medium);
-    gap: 1rem;
-    color: var(--color-text);
-    &Icon {
-      @include flex-center;
-      width: 2.5rem;
-      height: 2.5rem;
-      background-color: var(--purple-100);
-      border-radius: 0.375rem;
-      svg {
-        width: 60%;
-      }
-    }
-  }
-
   @media (min-width: 479px) {
     &Label {
       font-size: 1.75rem;
