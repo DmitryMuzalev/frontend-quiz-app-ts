@@ -1,5 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+
 import "./index.scss";
 import App from "./App";
 import { ContextApp } from "hoc/Context";
@@ -9,8 +11,10 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <ContextApp>
-      <App />
-    </ContextApp>
+    <BrowserRouter>
+      <ContextApp>
+        <App />
+      </ContextApp>
+    </BrowserRouter>
   </React.StrictMode>
 );

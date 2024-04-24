@@ -1,5 +1,4 @@
 import { useContextApp } from "hook/useContextApp";
-import styles from "./SelectQuiz.module.scss";
 import { LabelQuiz } from "components/LabelQuiz/LabelQuiz";
 
 export const SelectQuiz = () => {

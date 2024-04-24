@@ -103,6 +103,10 @@ h3 {
   color: var(--color-text);
 }
 
+a {
+  text-decoration: none;
+}
+
 progress {
   border-radius: 0.75rem;
   border: 3px solid var(--bg-elements);
@@ -192,6 +196,12 @@ progress {
   }
   @media (max-width: 992px) {
     row-gap: 1rem;
+  }
+}
+
+.greeting {
+  h2 {
+    margin-bottom: 1rem;
   }
 }
 

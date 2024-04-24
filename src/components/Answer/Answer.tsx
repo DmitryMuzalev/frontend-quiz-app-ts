@@ -1,6 +1,4 @@
-import { useContextApp } from "hook/useContextApp";
 import styles from "./Answer.module.scss";
-import { clsx } from "clsx";
 
 interface AnswerProps {
   index: number;
@@ -24,21 +22,8 @@ export const Answer = ({ index, text, cb }: AnswerProps) => {
       letter = "A";
   }
 
-  const { answer, currentQuestion, isChecked } = useContextApp();
-
-  const answerStyles = clsx(
-    styles.answer,
-    "listItem",
-    !isChecked && answer === text && styles.answerSelect,
-    isChecked && text === currentQuestion?.answer && styles.answerCorrect,
-    isChecked &&
-      answer === text &&
-      text !== currentQuestion?.answer &&
-      styles.answerError
-  );
-
   return (
-    <button className={answerStyles} onClick={() => cb(text)}>
+    <button className={""} onClick={() => cb(text)}>
       <div className={styles.answerIcon + " " + "icon"}>{letter}</div>
       <p className={styles.answerText}>{text}</p>
       <div className={styles.answerStatus}></div>

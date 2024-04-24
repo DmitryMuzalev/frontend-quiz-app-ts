@@ -6,7 +6,7 @@ import { LogoQuiz } from "components/LogoQuiz/LogoQuiz";
 interface ResultProps {}
 
 export const Result = ({}: ResultProps) => (
-  <Layout>
+  <>
     <h2>
       <span>Quiz completed</span>
       <span>Your scored...</span>
@@ -17,5 +17,5 @@ export const Result = ({}: ResultProps) => (
       <p className="textInfo"> out of 10</p>
     </div>
     <Button cb={() => {}}>Play again</Button>
-  </Layout>
+  </>
 );

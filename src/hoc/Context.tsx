@@ -1,7 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { QuestionType, QuizType, State } from "types";
-
-import data from "data.json";
+import { QuizType, State } from "types";
 
 export const Context = createContext<State | null>(null);
 
@@ -10,60 +8,40 @@ type ContextProviderProps = {
 };
 
 export const ContextApp = (props: ContextProviderProps) => {
-  const quizzes: QuizType[] = data.quizzes;
+  const [quizzes, setQuizzes] = useState<QuizType[]>([]);
   const [currentQuiz, setCurrentQuiz] = useState<QuizType | null>(null);
-  const [questions, setQuestions] = useState<QuestionType[]>([]);
-  const [indexCurrentQuestion, setIndexCurrentQuestion] = useState(0);
-  const [currentQuestion, setCurrentQuestion] = useState<QuestionType | null>(
-    null
-  );
-
-  const [answer, setAnswer] = useState("");
-  const [isChecked, setIsChecked] = useState(false);
 
   useEffect(() => {
-    currentQuiz ? setQuestions(currentQuiz.questions) : setQuestions([]);
-  }, [currentQuiz]);
-
-  useEffect(() => {
-    setCurrentQuestion(questions[indexCurrentQuestion]);
-  }, [indexCurrentQuestion, questions]);
-
-  //_Actions:
-  const selectQuiz = (name: string) => {
-    const quiz = quizzes.find((q) => q.title === name);
-    if (quiz) {
-      setCurrentQuiz(quiz);
+    async function getQuizzesData() {
+      try {
+        const response = await fetch("./data.json");
+        if (response.ok) {
+          const data = await response.json();
+          const quizzes: QuizType[] = data.quizzes;
+          setQuizzes(quizzes);
+        } else {
+          throw new Error("Data retrieval error!");
+        }
+      } catch (error) {
+        if (error instanceof Error) {
+          console.error(error.message);
+        }
+        console.log(error);
+      }
     }
-  };
+    getQuizzesData();
+  }, []);
 
-  const selectAnswer = (text: string) => setAnswer(text);
-
-  const resetApp = () => {
-    setCurrentQuiz(null);
-  };
-
-  const nextQuestion = () => {
-    setIndexCurrentQuestion((prev) => prev + 1);
-    setAnswer("");
-    setIsChecked(false);
-  };
-
-  const checkAnswer = () => setIsChecked(true);
+  function selectQuiz(theme: string) {
+    const quiz = quizzes.find((quiz) => quiz.title === theme);
+    if (quiz) setCurrentQuiz(quiz);
+  }
 
   const state: State = {
     quizzes,
-    currentQuiz,
-    indexQuestion: indexCurrentQuestion + 1,
-    maxIndexQuestion: questions.length,
-    currentQuestion,
-    isChecked,
-    answer,
-    checkAnswer,
     selectQuiz,
-    resetApp,
-    nextQuestion,
-    selectAnswer,
+    currentQuiz,
   };
+
   return <Context.Provider value={state}>{props.children}</Context.Provider>;
 };

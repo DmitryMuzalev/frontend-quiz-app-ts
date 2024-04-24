@@ -1,12 +1,16 @@
-import { Layout } from "components/Layout/Layout";
-import { Greeting } from "components/Greeting/Greeting";
 import { SelectQuiz } from "components/SelectQuiz/SelectQuiz";
 
 interface StartMenuProps {}
 
 export const StartMenu = ({}: StartMenuProps) => (
-  <Layout>
-    <Greeting />
+  <>
+    <div className="greeting">
+      <h2>
+        <span>Welcome to the</span>
+        <span>Frontend Quiz!</span>
+      </h2>
+      <p className="textInfo">Pick a subject to get started.</p>
+    </div>
     <SelectQuiz />
-  </Layout>
+  </>
 );

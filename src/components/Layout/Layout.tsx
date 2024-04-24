@@ -1,9 +1,14 @@
+import { Outlet } from "react-router-dom";
+import { Header } from "components/Header/Header";
 import styles from "./Layout.module.scss";
 
-interface LayoutProps {
-  children: React.ReactNode;
-}
-
-export const Layout = ({ children }: LayoutProps) => (
-  <div className={styles.layout}>{children}</div>
-);
+export const Layout = () => {
+  return (
+    <>
+      <Header />
+      <div className={styles.layout}>
+        <Outlet />
+      </div>
+    </>
+  );
+};
