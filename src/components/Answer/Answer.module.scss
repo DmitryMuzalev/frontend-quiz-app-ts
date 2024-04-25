@@ -1,13 +1,18 @@
 .answer {
   transition: all 0.3s;
 
+  &:disabled {
+    pointer-events: none;
+  }
+
   &Select {
     border-color: var(--purple-400);
+    pointer-events: none;
   }
 
   &Select > &Icon {
-    background-color: var(--purple-400);
-    color: var(--white);
+    background-color: var(--purple-400) !important;
+    color: var(--white) !important;
   }
 
   &Error {
