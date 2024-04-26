@@ -1,23 +1,18 @@
 import { clsx } from "clsx";
 import styles from "./Answer.module.scss";
+import { useContextApp } from "hook/useContextApp";
 
 interface AnswerProps {
   index: number;
   text: string;
-  isSelected: boolean;
-  isCorrect: boolean;
-  isChecked: boolean;
-  cb: (value: string) => void;
 }
 
-export const Answer = ({
-  index,
-  text,
-  cb,
-  isSelected,
-  isCorrect,
-  isChecked,
-}: AnswerProps) => {
+export const Answer = ({ index, text }: AnswerProps) => {
+  const { selectedAnswer, currentQuestion, isChecked, selectAnswer } =
+    useContextApp();
+
+  const isSelected = text === selectedAnswer;
+  const isCorrect = text === currentQuestion?.answer;
   let letter: string;
   switch (index) {
     case 1:
@@ -44,7 +39,7 @@ export const Answer = ({
   return (
     <button
       className={answerStyles}
-      onClick={() => cb(text)}
+      onClick={() => selectAnswer(text)}
       disabled={isChecked}
     >
       <div className={styles.answerIcon + " " + "icon"}>{letter}</div>

@@ -1,7 +1,17 @@
 export type State = {
   quizzes: QuizType[];
-  selectQuiz: (value: string) => void;
   currentQuiz: QuizType | null;
+  currentQuestion: QuestionType;
+  step: number;
+  score: number;
+  numberQuestion: number;
+  selectedAnswer: string;
+  isChecked: boolean;
+  selectQuiz: (value: string) => void;
+  selectAnswer: (value: string) => void;
+  nextQuestion: () => void;
+  checkAnswer: () => void;
+  resetApp: () => void;
 };
 
 export type QuizType = {

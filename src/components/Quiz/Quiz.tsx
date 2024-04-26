@@ -1,63 +1,42 @@
 import { Answer } from "components/Answer/Answer";
 import { Button } from "components/Button/Button";
 import { useContextApp } from "hook/useContextApp";
-import { useState } from "react";
 
 interface QuizProps {}
 
 export const Quiz = ({}: QuizProps) => {
-  const { currentQuiz } = useContextApp();
-  const questions = currentQuiz ? currentQuiz.questions : [];
-
-  const [step, setStep] = useState(0);
-  const [isChecked, setIsChecked] = useState(false);
-  const [selectedAnswer, setSelectedAnswer] = useState("");
-
-  const selectAnswer = (answer: string) => {
-    setSelectedAnswer(answer);
-  };
-
-  const nextQuestion = () => {
-    setStep((prevStep) => ++prevStep);
-    setSelectedAnswer("");
-    setIsChecked(false);
-  };
+  const {
+    currentQuestion,
+    step,
+    numberQuestion,
+    selectedAnswer,
+    isChecked,
+    nextQuestion,
+    checkAnswer,
+  } = useContextApp();
 
   return (
     <>
       <div className="question">
-        <p className="textInfo">{`Question ${step + 1} of ${
-          questions.length
-        }`}</p>
-        <h3>{questions[step]?.question}</h3>
-        <progress max={questions.length} value={step + 1}></progress>
+        <p className="textInfo">{`Question ${step} of ${numberQuestion}`}</p>
+        <h3>{currentQuestion?.question}</h3>
+        <progress max={numberQuestion} value={step}></progress>
       </div>
+
       <div className="list">
-        {questions[step]?.options.map((op, i) => {
-          return (
-            <Answer
-              key={i}
-              index={i}
-              text={op}
-              cb={selectAnswer}
-              isSelected={op === selectedAnswer}
-              isCorrect={op === questions[step]?.answer}
-              isChecked={isChecked}
-            />
-          );
+        {currentQuestion?.options.map((op, i) => {
+          return <Answer key={i} index={i} text={op} />;
         })}
       </div>
+
       {!isChecked ? (
-        <Button
-          isDisabled={!selectedAnswer}
-          cb={() => {
-            setIsChecked(true);
-          }}
-        >
+        <Button isDisabled={!selectedAnswer} cb={checkAnswer}>
           Submit answer
         </Button>
-      ) : (
+      ) : step !== numberQuestion ? (
         <Button cb={nextQuestion}>Next question</Button>
+      ) : (
+        <Button cb={() => {}}>Show result</Button>
       )}
     </>
   );
