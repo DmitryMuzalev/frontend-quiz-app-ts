@@ -1,6 +1,7 @@
-import { Answer } from "components/Answer/Answer";
-import { Button } from "components/Button/Button";
-import { useContextApp } from "hook/useContextApp";
+import { Answer } from 'components/Answer/Answer';
+import { Button } from 'components/Button/Button';
+import { useContextApp } from 'hook/useContextApp';
+import { Link, useNavigate } from 'react-router-dom';
 
 interface QuizProps {}
 
@@ -14,6 +15,9 @@ export const Quiz = ({}: QuizProps) => {
     nextQuestion,
     checkAnswer,
   } = useContextApp();
+
+  const navigate = useNavigate();
+  const goResult = () => navigate('/result');
 
   return (
     <>
@@ -36,7 +40,7 @@ export const Quiz = ({}: QuizProps) => {
       ) : step !== numberQuestion ? (
         <Button cb={nextQuestion}>Next question</Button>
       ) : (
-        <Button cb={() => {}}>Show result</Button>
+        <Button cb={goResult}>Show result</Button>
       )}
     </>
   );
