@@ -1,3 +1,4 @@
+import { useLocalStorage } from "hook/useLocalStorage";
 import { createContext, useEffect, useState } from "react";
 import { QuizType, State } from "types";
 
@@ -9,7 +10,7 @@ type ContextProviderProps = {
 
 export const ContextApp = (props: ContextProviderProps) => {
   const [quizzes, setQuizzes] = useState<QuizType[]>([]);
-  const [currentQuiz, setCurrentQuiz] = useState<QuizType | null>(null);
+  const [currentQuiz, setCurrentQuiz] = useState<QuizType | null>(null); // useLocalStorage(null, "currentQuiz")
 
   const questions = currentQuiz ? currentQuiz.questions : [];
 
