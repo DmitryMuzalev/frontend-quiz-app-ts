@@ -1,18 +1,22 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import styles from "./ThemeSwitcher.module.scss";
+import { useLocalStorage } from "hook/useLocalStorage";
 
 export const ThemeSwitcher = () => {
-  const [isDark, setIsDark] = useState(false);
+  const [theme, setIsDark] = useLocalStorage<"dark" | "light">(
+    "light",
+    "theme"
+  );
 
   useEffect(() => {
-    document.body.setAttribute("data-theme", isDark ? "dark" : "light");
-  }, [isDark]);
+    document.body.setAttribute("data-theme", theme);
+  }, [theme]);
 
   return (
     <div className={styles.themeSwitcher}>
       <img
         src={
-          isDark
+          theme === "dark"
             ? "./assets/images/icon-sun-light.svg"
             : "./assets/images/icon-sun-dark.svg"
         }
@@ -22,14 +26,16 @@ export const ThemeSwitcher = () => {
         <input
           type="checkbox"
           id="themeSwitcher"
-          checked={isDark}
-          onChange={() => setIsDark((prev) => !prev)}
+          checked={theme === "dark"}
+          onChange={() => {
+            setIsDark(theme === "dark" ? "light" : "dark");
+          }}
         />
         <span className={styles.switcherSlider}></span>
       </label>
       <img
         src={
-          isDark
+          theme === "dark"
             ? "./assets/images/icon-moon-light.svg"
             : "./assets/images/icon-moon-dark.svg"
         }

@@ -10,14 +10,23 @@ type ContextProviderProps = {
 
 export const ContextApp = (props: ContextProviderProps) => {
   const [quizzes, setQuizzes] = useState<QuizType[]>([]);
-  const [currentQuiz, setCurrentQuiz] = useState<QuizType | null>(null); // useLocalStorage(null, "currentQuiz")
+  const [currentQuiz, setCurrentQuiz] = useLocalStorage<QuizType | null>(
+    null,
+    "currentQuiz"
+  );
 
   const questions = currentQuiz ? currentQuiz.questions : [];
 
-  const [score, setScore] = useState(0);
-  const [step, setStep] = useState(0);
-  const [isChecked, setIsChecked] = useState(false);
-  const [selectedAnswer, setSelectedAnswer] = useState("");
+  const [score, setScore] = useLocalStorage<number>(0, "score");
+  const [step, setStep] = useLocalStorage<number>(0, "step");
+  const [isChecked, setIsChecked] = useLocalStorage<boolean>(
+    false,
+    "isChecked"
+  );
+  const [selectedAnswer, setSelectedAnswer] = useLocalStorage<string>(
+    "",
+    "selectedAnswer"
+  );
 
   //_Load data:
   useEffect(() => {
@@ -53,13 +62,15 @@ export const ContextApp = (props: ContextProviderProps) => {
 
   const checkAnswer = () => {
     if (selectedAnswer === questions[step]?.answer) {
-      setScore((prevScore) => ++prevScore);
+      const updateScore = score + 1;
+      setScore(updateScore);
     }
     setIsChecked(true);
   };
 
   const nextQuestion = () => {
-    setStep((prevStep) => ++prevStep);
+    const updateStep = step + 1;
+    setStep(updateStep);
     setSelectedAnswer("");
     setIsChecked(false);
   };

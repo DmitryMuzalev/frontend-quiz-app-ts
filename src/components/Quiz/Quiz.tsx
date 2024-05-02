@@ -1,7 +1,7 @@
-import { Answer } from 'components/Answer/Answer';
-import { Button } from 'components/Button/Button';
-import { useContextApp } from 'hook/useContextApp';
-import { Link, useNavigate } from 'react-router-dom';
+import { Answer } from "components/Answer/Answer";
+import { Button } from "components/Button/Button";
+import { useContextApp } from "hook/useContextApp";
+import { useNavigate } from "react-router-dom";
 
 interface QuizProps {}
 
@@ -17,7 +17,7 @@ export const Quiz = ({}: QuizProps) => {
   } = useContextApp();
 
   const navigate = useNavigate();
-  const goResult = () => navigate('/result');
+  const goResult = () => navigate("/result");
 
   return (
     <>
