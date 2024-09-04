@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/frontend-quiz-app-ts/static/css/main.56d45b76.css",
+    "main.js": "/frontend-quiz-app-ts/static/js/main.ab9bb7d8.js",
+    "index.html": "/frontend-quiz-app-ts/index.html",
+    "static/media/pattern-background-desktop-dark.svg": "/frontend-quiz-app-ts/static/media/pattern-background-desktop-dark.e211d976d5b431130f82.svg",
+    "static/media/pattern-background-desktop-light.svg": "/frontend-quiz-app-ts/static/media/pattern-background-desktop-light.d8d38901bd02457d3784.svg",
+    "static/media/pattern-background-mobile-dark.svg": "/frontend-quiz-app-ts/static/media/pattern-background-mobile-dark.1cff22465c45eb596969.svg",
+    "static/media/pattern-background-mobile-light.svg": "/frontend-quiz-app-ts/static/media/pattern-background-mobile-light.2a1f70bd700b2be97b86.svg",
+    "static/media/pattern-background-tablet-dark.svg": "/frontend-quiz-app-ts/static/media/pattern-background-tablet-dark.462d8b613fbdc840835d.svg",
+    "static/media/pattern-background-tablet-light.svg": "/frontend-quiz-app-ts/static/media/pattern-background-tablet-light.72e6cda6148dc11584fb.svg",
+    "main.56d45b76.css.map": "/frontend-quiz-app-ts/static/css/main.56d45b76.css.map",
+    "main.ab9bb7d8.js.map": "/frontend-quiz-app-ts/static/js/main.ab9bb7d8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.56d45b76.css",
+    "static/js/main.ab9bb7d8.js"
+  ]
+}
