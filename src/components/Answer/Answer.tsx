@@ -2,12 +2,12 @@ import { clsx } from "clsx";
 import styles from "./Answer.module.scss";
 import { useContextApp } from "hook/useContextApp";
 
-interface AnswerProps {
+type Props = {
   index: number;
   text: string;
-}
+};
 
-export const Answer = ({ index, text }: AnswerProps) => {
+export const Answer = ({ index, text }: Props) => {
   const { selectedAnswer, currentQuestion, isChecked, selectAnswer } =
     useContextApp();
 

@@ -1,8 +1,8 @@
-import styles from './Result.module.scss';
-import { Button } from 'components/Button/Button';
-import { LogoQuiz } from 'components/LogoQuiz/LogoQuiz';
-import { useContextApp } from 'hook/useContextApp';
-import { useNavigate } from 'react-router-dom';
+import styles from "./Result.module.scss";
+import { Button } from "components/UI/Button/Button";
+import { LogoQuiz } from "components/LogoQuiz/LogoQuiz";
+import { useContextApp } from "hook/useContextApp";
+import { useNavigate } from "react-router-dom";
 
 interface ResultProps {}
 
@@ -10,7 +10,7 @@ export const Result = ({}: ResultProps) => {
   const { currentQuiz, score, numberQuestion, resetApp } = useContextApp();
   const navigate = useNavigate();
   const goStartMenu = () => {
-    navigate('/');
+    navigate("/");
     resetApp();
   };
 

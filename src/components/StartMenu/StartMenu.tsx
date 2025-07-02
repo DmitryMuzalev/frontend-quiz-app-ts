@@ -1,8 +1,8 @@
-import { SelectQuiz } from 'components/SelectQuiz/SelectQuiz';
+import { LabelQuiz } from "components/LabelQuiz/LabelQuiz";
+import { useContextApp } from "hook/useContextApp";
 
-interface StartMenuProps {}
-
-export const StartMenu = ({}: StartMenuProps) => {
+export const StartMenu = () => {
+  const { quizzes } = useContextApp();
   return (
     <>
       <div className="greeting">
@@ -12,7 +12,11 @@ export const StartMenu = ({}: StartMenuProps) => {
         </h2>
         <p className="textInfo">Pick a subject to get started.</p>
       </div>
-      <SelectQuiz />
+      <div className="list">
+        {quizzes.map((quiz, index) => {
+          return <LabelQuiz key={index} icon={quiz.icon} title={quiz.title} />;
+        })}
+      </div>
     </>
   );
 };

@@ -1,11 +1,9 @@
 import { Answer } from "components/Answer/Answer";
-import { Button } from "components/Button/Button";
+import { Button } from "components/UI/Button/Button";
 import { useContextApp } from "hook/useContextApp";
 import { useNavigate } from "react-router-dom";
 
-interface QuizProps {}
-
-export const Quiz = ({}: QuizProps) => {
+export const Quiz = () => {
   const {
     currentQuestion,
     step,

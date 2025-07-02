@@ -1,7 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 
-import { Container } from "components/Container/Container";
-import { Layout } from "components/Layout/Layout";
+import { Layout } from "components/UI/Layout/Layout";
 import { Quiz } from "components/Quiz/Quiz";
 import { StartMenu } from "components/StartMenu/StartMenu";
 import { Result } from "components/Result/Result";
@@ -11,7 +10,7 @@ function App() {
   const { quizzes } = useContextApp();
 
   return (
-    <Container>
+    <div className={"container"}>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<StartMenu />} />
@@ -24,7 +23,7 @@ function App() {
           <Route path="/result" element={<Result />} />
         </Route>
       </Routes>
-    </Container>
+    </div>
   );
 }
 

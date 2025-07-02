@@ -28,7 +28,6 @@ export const ContextApp = (props: ContextProviderProps) => {
     "selectedAnswer"
   );
 
-  //_Load data:
   useEffect(() => {
     async function getQuizzesData() {
       try {
@@ -50,7 +49,6 @@ export const ContextApp = (props: ContextProviderProps) => {
     getQuizzesData();
   }, []);
 
-  //_Actions:
   function selectQuiz(theme: string) {
     const quiz = quizzes.find((quiz) => quiz.title === theme);
     if (quiz) setCurrentQuiz(quiz);
