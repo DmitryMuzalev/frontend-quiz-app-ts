@@ -1,15 +1,17 @@
-import { useContextApp } from 'hook/useContextApp';
-import { Link } from 'react-router-dom';
-import { QuizType } from 'types';
+import { useContextApp } from "hook/useContextApp";
+import { Link } from "react-router-dom";
 
-interface LabelQuizProps extends Pick<QuizType, 'title' | 'icon'> {}
+type Props = {
+  icon: string;
+  title: string;
+};
 
-export const LabelQuiz = ({ icon, title }: LabelQuizProps) => {
+export const LabelQuiz = ({ icon, title }: Props) => {
   const { selectQuiz, resetApp } = useContextApp();
   return (
     <Link
       to={`/${title.toLowerCase()}`}
-      className={'listItem'}
+      className={"listItem"}
       onClick={() => {
         resetApp();
         selectQuiz(title);

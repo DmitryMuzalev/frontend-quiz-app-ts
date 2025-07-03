@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
 export function useLocalStorage<T>(
   initialValue: T,
   key: string
-): [T, React.Dispatch<T>] {
+): [T, Dispatch<SetStateAction<T>>] {
   const getValue = () => {
     const store = localStorage.getItem(key);
     return store ? JSON.parse(store) : initialValue;

@@ -4,9 +4,7 @@ import { LogoQuiz } from "components/LogoQuiz/LogoQuiz";
 import { useContextApp } from "hook/useContextApp";
 import { useNavigate } from "react-router-dom";
 
-interface ResultProps {}
-
-export const Result = ({}: ResultProps) => {
+export const Result = () => {
   const { currentQuiz, score, numberQuestion, resetApp } = useContextApp();
   const navigate = useNavigate();
   const goStartMenu = () => {
