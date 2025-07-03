@@ -1,0 +1,49 @@
+/* 
+
+!1_Получаем данные: quizzis
+type QuizType = {
+  title: string;
+  icon: string;
+  questions: Question[];
+};
+
+type Question = {
+  question: string;
+  options: string[];
+  answer: string;
+}
+
+!2_Стартовое меню:
+Показывает список тем
+
+Что нужно: 
+type QuizTopicProps = {
+  title: string;
+  icon: string;
+};
+
+Функция выбора текущего Quiz 
+
+!3_Запуск Quiz 
+
+Logo(icon, title) отображается в Header
+Появляется 1-й вопрос
+
+type QuizProgress = {
+  currentQuestionId: string;
+  score: number
+  selectedAnswer: boolean
+};
+
+Функция проверка вопроса, показать правильный и не правильный ответ  
+
+!3_Результат:
+
+type Result = {
+  score: number;
+  icon: sting
+  + количество вопросов 
+};
+
+Функция сброса Quiz 
+*/
