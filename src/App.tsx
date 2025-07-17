@@ -1,6 +1,7 @@
 import { Menu } from "components/Menu/Menu";
 import { QuizNew } from "components/QuizNew/QuizNew";
 import { Results } from "components/Results/Results";
+import { Layout } from "components/UI/Layout/Layout";
 
 import { useContextApp } from "hook/useContextApp";
 
@@ -10,11 +11,11 @@ function App() {
     return <div>Loading....</div>;
   }
   return (
-    <div>
+    <Layout>
       {currentScreen === "menu" && <Menu />}
       {currentScreen === "quiz" && <QuizNew />}
-      {currentScreen === "results" && <Results />};
-    </div>
+      {currentScreen === "results" && <Results />}
+    </Layout>
   );
 }
 

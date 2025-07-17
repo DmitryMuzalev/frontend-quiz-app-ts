@@ -37,6 +37,7 @@
 
 #root {
   @include flex-center;
+  flex-direction: column;
   width: 100%;
   min-height: 100vh;
 }
@@ -236,4 +237,9 @@ progress {
 
 ul {
   list-style: none;
+}
+
+.content {
+  display: flex;
+  border: 1px solid red;
 }
