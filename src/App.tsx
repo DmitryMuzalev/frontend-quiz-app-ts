@@ -1,5 +1,5 @@
 import { Menu } from "components/Menu/Menu";
-import { QuizNew } from "components/QuizNew/QuizNew";
+import { Quiz } from "components/Quiz/Quiz";
 import { Results } from "components/Results/Results";
 import { Layout } from "components/UI/Layout/Layout";
 
@@ -13,7 +13,7 @@ function App() {
   return (
     <Layout>
       {currentScreen === "menu" && <Menu />}
-      {currentScreen === "quiz" && <QuizNew />}
+      {currentScreen === "quiz" && <Quiz />}
       {currentScreen === "results" && <Results />}
     </Layout>
   );

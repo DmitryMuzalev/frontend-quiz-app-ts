@@ -16,10 +16,15 @@ export type Question = {
 export type Screen = "menu" | "quiz" | "results";
 
 export type State = {
+  score: number;
   quizzes: Quiz[];
   isLoading: boolean;
+  currentQuiz: Quiz | null;
   currentScreen: Screen;
   handlerSelectQuiz: (title: string) => void;
+  handleShowResults: () => void;
+  handelResetGame: () => void;
+  incrementScore: () => void;
 };
 //
 
@@ -33,9 +38,30 @@ export const ContextApp = ({ children }: Props) => {
   const [isLoading, setIsLoading] = useState(true);
   const [quizzes, setQuizzes] = useState<Quiz[]>([]);
   const [currentScreen, setCurrentScreen] = useState<Screen>("menu"); // 'quiz' | 'results'
+  const [currentQuiz, setCurrentQuiz] = useState<Quiz | null>(null);
+
+  const [score, setScore] = useState(0);
 
   const handlerSelectQuiz = (title: string) => {
-    setCurrentScreen("quiz");
+    const selectedQuiz = quizzes.find((quiz) => quiz.title === title);
+    if (selectedQuiz) {
+      setCurrentQuiz(selectedQuiz);
+      setCurrentScreen("quiz");
+    }
+  };
+
+  const handleShowResults = () => {
+    setCurrentScreen("results");
+  };
+
+  const handelResetGame = () => {
+    setScore(0);
+    setCurrentQuiz(null);
+    setCurrentScreen("menu");
+  };
+
+  const incrementScore = () => {
+    setScore((prevScoreValue) => prevScoreValue + 1);
   };
 
   useEffect(() => {
@@ -55,10 +81,15 @@ export const ContextApp = ({ children }: Props) => {
   }, []);
 
   const state: State = {
+    score,
     quizzes,
     isLoading,
     currentScreen,
+    currentQuiz,
     handlerSelectQuiz,
+    handleShowResults,
+    handelResetGame,
+    incrementScore,
   };
 
   return <Context.Provider value={state}>{children}</Context.Provider>;

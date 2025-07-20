@@ -1,10 +1,12 @@
+import { ThemeSwitcher } from "../ThemeSwitcher/ThemeSwitcher";
 import s from "./Header.module.scss";
+import { Logo } from "components/Logo/Logo";
 
 function Header() {
   return (
     <header className={s.header}>
-      <div>Логотип</div>
-      <div>Переключатель темы</div>
+      <Logo />
+      <ThemeSwitcher />
     </header>
   );
 }
