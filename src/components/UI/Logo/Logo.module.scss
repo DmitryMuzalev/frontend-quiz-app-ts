@@ -1,0 +1,10 @@
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: clamp(1.125rem, 5vw, 1.75rem);
+  font-weight: var(--fw-medium);
+  color: var(--color-text);
+}
