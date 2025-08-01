@@ -6,14 +6,26 @@
 }
 
 .questionInfo {
-  border: 1px solid blue;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+
+  @media (max-width: 992px) {
+    row-gap: 1rem;
+  }
+}
+
+.question {
+  flex-grow: 1;
+  font-weight: var(--fw-medium);
+  font-size: clamp(1.25rem, 5vw, 1.75rem);
+  color: var(--color-text);
 }
 
 .answers {
-  border: 1px solid green;
+  display: flex;
 }
 
 .button {
   grid-column: 2 / -1;
-  border: 1px solid yellow;
 }

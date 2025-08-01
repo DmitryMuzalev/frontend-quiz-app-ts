@@ -1,6 +1,8 @@
-import s from "./Quiz.module.scss";
-import { useState } from "react";
+import { Box } from "components/UI/Box/Box";
+import { Button } from "components/UI/Button/Button";
 import { useContextApp } from "hook/useContextApp";
+import { useState } from "react";
+import s from "./Quiz.module.scss";
 
 function Quiz() {
   const { currentQuiz, incrementScore, handleShowResults } = useContextApp();
@@ -28,10 +30,12 @@ function Quiz() {
 
   const handlerSelectAnswer = (value: string) => setCurrentAnswer(value);
 
+  const variants = ["A", "B", "C", "D"];
+
   return (
-    <div className={s.wrapper}>
+    <>
       <div className={s.questionInfo}>
-        <span className={s.label}>
+        <span className={"textInfo"}>
           {`Question ${questionIndex + 1} of ${questions.length}`}
         </span>
         <p className={s.question}>{question}</p>
@@ -39,17 +43,23 @@ function Quiz() {
       </div>
       <ul className={s.answers}>
         {options.map((option, index) => (
-          <li key={index} onClick={() => handlerSelectAnswer(option)}>
-            {option}
+          <li key={index}>
+            <button
+              className="badge"
+              onClick={() => handlerSelectAnswer(option)}
+            >
+              <Box>{variants[index]}</Box>
+              <span>{option}</span>
+            </button>
           </li>
         ))}
       </ul>
       <div className={s.button}>
-        <button onClick={handlerSubmitAnswer} disabled={!currentAnswer}>
-          submit answer
-        </button>
+        <Button onClick={handlerSubmitAnswer} disabled={!currentAnswer}>
+          Submit answer
+        </Button>
       </div>
-    </div>
+    </>
   );
 }
 
