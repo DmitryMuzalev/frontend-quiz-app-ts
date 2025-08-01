@@ -1,11 +1,11 @@
-import { Logo } from "components/Logo/Logo";
+import { Logo } from "components/UI/Logo/Logo";
 import { useContextApp } from "hook/useContextApp";
 
 function Results() {
   const { score, currentQuiz, handelResetGame } = useContextApp();
 
   return (
-    <div>
+    <div className="badge">
       <p>Конец игры</p>
       <div>
         <p>

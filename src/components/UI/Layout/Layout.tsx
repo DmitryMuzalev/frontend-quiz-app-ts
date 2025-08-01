@@ -7,7 +7,7 @@ function Layout({ children }: Props) {
   return (
     <>
       <Header />
-      <main className="content">{children}</main>
+      <main>{children}</main>
     </>
   );
 }
