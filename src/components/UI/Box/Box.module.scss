@@ -1,0 +1,40 @@
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--grey-100);
+  color: var(--grey-400);
+  transition: all 0.3s;
+  flex-shrink: 0;
+
+  img {
+    width: 70%;
+  }
+
+  &--html {
+    background-color: var(--orange-100);
+  }
+
+  &--css {
+    background-color: var(--green-100);
+  }
+
+  &--javascript {
+    background-color: var(--blue-100);
+  }
+
+  &--accessibility {
+    background-color: var(--purple-100);
+  }
+
+  @media (max-width: 479px) {
+    width: 2rem;
+    height: 2rem;
+    img {
+      width: 50%;
+    }
+  }
+}
