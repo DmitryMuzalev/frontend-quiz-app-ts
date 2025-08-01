@@ -1,3 +1,4 @@
+import { Icon } from "components/UI/Icon/Icon";
 import { useContextApp } from "hook/useContextApp";
 
 function QuizTopicsList() {
@@ -22,11 +23,8 @@ type QuizTopicItemProps = {
 function QuizTopicItem({ icon, title }: QuizTopicItemProps) {
   const { handlerSelectQuiz } = useContextApp();
   return (
-    <li
-      style={{ border: "1px solid red" }}
-      onClick={() => handlerSelectQuiz(title)}
-    >
-      <img src={icon} alt={title} />
+    <li onClick={() => handlerSelectQuiz(title)} className="badge">
+      <Icon icon={icon} name={title} />
       <span>{title}</span>
     </li>
   );
