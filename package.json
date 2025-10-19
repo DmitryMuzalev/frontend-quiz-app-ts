@@ -1,5 +1,6 @@
 {
   "name": "frontend-quiz-app-ts",
+  "homepage": "https://DmitryMuzalev.github.io/frontend-quiz-app-ts",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
