@@ -3,6 +3,7 @@ import { Button } from "components/UI/Button/Button";
 import { useContextApp } from "hook/useContextApp";
 import { useState } from "react";
 import s from "./Quiz.module.scss";
+import clsx from "clsx";
 
 function Quiz() {
   const { currentQuiz, incrementScore, handleShowResults } = useContextApp();
@@ -35,24 +36,36 @@ function Quiz() {
   return (
     <>
       <div className={s.questionInfo}>
-        <span className={"textInfo"}>
+        <span className={"small-text"}>
           {`Question ${questionIndex + 1} of ${questions.length}`}
         </span>
         <p className={s.question}>{question}</p>
         <progress max={questions.length} value={questionIndex + 1}></progress>
       </div>
       <ul className={s.answers}>
-        {options.map((option, index) => (
-          <li key={index}>
-            <button
-              className="badge"
-              onClick={() => handlerSelectAnswer(option)}
-            >
-              <Box>{variants[index]}</Box>
-              <span>{option}</span>
-            </button>
-          </li>
-        ))}
+        {options.map((option, index) => {
+          const isActive = currentAnswer === option;
+
+          const answerStyles = clsx(
+            "badge",
+            s.variant,
+            isActive && s["variant--active"]
+          );
+
+          return (
+            <li key={index}>
+              <button
+                className={answerStyles}
+                onClick={() => handlerSelectAnswer(option)}
+              >
+                <Box>
+                  <span className={s.letter}>{variants[index]}</span>
+                </Box>
+                <span>{option}</span>
+              </button>
+            </li>
+          );
+        })}
       </ul>
       <div className={s.button}>
         <Button onClick={handlerSubmitAnswer} disabled={!currentAnswer}>

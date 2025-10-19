@@ -32,14 +32,15 @@
   --purple-400: #a729f5;
   --green-100: #e0fdef;
   --green-400: #26d782;
+  --success: #079b3a;
   --red-400: #ee5454;
+  --error: #f52929;
   --white: #ffffff;
 
   --outline: 3px solid black;
 }
 
 #root {
-  border: 1px solid red;
   @include flex-center;
   flex-direction: column;
   row-gap: 5rem;
@@ -59,7 +60,6 @@
 }
 
 body {
-  border: 1px solid red;
   width: 100%;
   min-height: 100vh;
   background-repeat: no-repeat;
@@ -72,7 +72,7 @@ body {
 }
 
 body[data-theme="light"] {
-  --color-info-text: var(--grey-900);
+  --small-text-color: var(--grey-900);
   --color-text: var(--grey-900);
   --bg-elements: var(--white);
 
@@ -90,7 +90,7 @@ body[data-theme="light"] {
 
 body[data-theme="dark"] {
   --color-text: var(--white);
-  --color-info-text: var(--grey-200);
+  --small-text-color: var(--grey-200);
   --bg-elements: var(--grey-700);
 
   background-image: url("../public/assets/images/pattern-background-desktop-dark.svg");
@@ -106,13 +106,7 @@ body[data-theme="dark"] {
 }
 
 h2 {
-  display: flex;
-  flex-direction: column;
-  font-size: clamp(2.5rem, 6vw, 4rem);
-  color: var(--color-text);
-  span:first-child {
-    font-weight: var(--fw-light);
-  }
+  font-size: clamp(2rem, 5vw, 3.5rem);
 }
 
 h3 {
@@ -126,7 +120,6 @@ a {
 }
 
 header {
-  border: 1px solid red;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -134,7 +127,6 @@ header {
 }
 
 main {
-  border: 1px solid red;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
@@ -174,9 +166,9 @@ progress {
   }
 }
 
-.textInfo {
+.small-text {
   font-size: 0.875rem;
-  color: var(--color-info-text);
+  color: var(--small-text-color);
   font-style: italic;
   @media (min-width: 600px) {
     font-size: 1.25rem;
@@ -207,8 +199,12 @@ progress {
 }
 
 .greeting {
-  h2 {
-    margin-bottom: 1rem;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  margin-bottom: 1rem;
+  color: var(--color-text);
+  font-weight: var(--fw-light);
+  span {
+    display: block;
   }
 }
 

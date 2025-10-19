@@ -3,12 +3,12 @@ import { QuizTopicsList } from "../QuizTopicsList/QuizTopicsList";
 function Menu() {
   return (
     <>
-      <div className="greeting">
-        <h2>
+      <div>
+        <h2 className="greeting">
           <span>Welcome to the</span>
           <span>Frontend Quiz!</span>
         </h2>
-        <p className="textInfo">Pick a subject to get started.</p>
+        <p className="small-text">Pick a subject to get started.</p>
       </div>
       <QuizTopicsList />
     </>

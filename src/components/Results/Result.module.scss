@@ -1,0 +1,35 @@
+.wrapper {
+}
+
+.result {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  border-radius: 1.25rem;
+  padding: 2.5rem;
+}
+
+.score {
+  text-align: center;
+  color: var(--color-text);
+  font-weight: var(--fw-medium);
+  font-size: 10rem;
+  @media (max-width: 767px) {
+    font-size: 6rem;
+  }
+}
+
+.text {
+  font-size: 1rem;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  font-size: clamp(1.5rem, 6vw, 2rem);
+  color: var(--color-text);
+  span:first-child {
+    font-weight: var(--fw-light);
+  }
+}

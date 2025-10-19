@@ -29,3 +29,24 @@
 .button {
   grid-column: 2 / -1;
 }
+
+.variant {
+  transition: all 0.3s;
+
+  &:not(&--active):hover {
+    background-color: #b64afa80;
+    .letter {
+      color: var(--purple-300);
+    }
+  }
+  &--active {
+    background-color: var(--purple-400);
+    .letter {
+      color: var(--purple-400);
+    }
+  }
+}
+
+.letter {
+  transition: all 0.3s;
+}
